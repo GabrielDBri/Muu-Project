@@ -1,0 +1,44 @@
+.navegacao {
+    position: fixed;
+    left: 0%;
+    top: 0%;
+    width: 20.5%;
+    height: 975px;
+    background-color: #333; /* Cor de fundo do menu */
+    padding: 20px; /* Espaçamento interno do menu */
+    color: #fff;
+    border-radius: 15px;
+    border: 3px solid #000;
+    background: #FFF;
+    
+}
+
+.caixa1 {
+    align-items: center;
+    display: flex;
+    color: #000;
+    flex-direction: column;
+    font-size: 150%;
+    justify-content: center;
+    height: 50%;
+    text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
+    font-family: Montserrat;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    text-align: center;
+}
+
+
+.home{
+    font-size: 25px;
+    color: #000;
+}
+.botaos {
+    color: #000;
+    width: 60%;
+    height: 60%px;
+    border-radius: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.50);
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+}

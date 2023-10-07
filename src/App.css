@@ -1,0 +1,15 @@
+#root {
+    display: flex;
+    max-width: 1280px;
+    margin-left: auto;
+    width: 72%; /* Largura da div */
+    margin-top: 6%;
+    overflow: auto; /* Adiciona barras de rolagem se o conteúdo ultrapassar a altura máxima */
+    border: 1% solid #ccc; /* Adicione uma borda para visualização */
+    border-radius: 20px;
+    border: 1px solid rgba(240, 235, 235, 0.5);
+    padding: 2%;
+    
+}
+
+
