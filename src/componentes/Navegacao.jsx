@@ -8,6 +8,7 @@ import Animais from '../pages/Animais'
 import RegistrarOrdenha from '../pages/RegistrarOrdenha'
 import Cabecalho from './Cabecalho';
 import logo from '../assets/imagens/logomuu.png'
+import RegistrarAnimais from '../pages/RegistrarAnimais';
 
 
 function Navegacao (){
@@ -35,6 +36,7 @@ function Navegacao (){
                     <Route path="/animais" element={<Animais/>}/>
                     <Route path="/vacinas" element={<Vacinas/>}/>
                     <Route path="/historico" element={<Historico/>}/>
+                    <Route path="/registraranimais" element={<RegistrarAnimais/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
