@@ -23,7 +23,7 @@ function Animais() {
                 Tab content for Profile
             </Tab>
             <Tab eventKey="contact" title="Contact" disabled>
-                Tab content for Contact
+                Tab content for Contact no
             </Tab>
         </Tabs>
     );
