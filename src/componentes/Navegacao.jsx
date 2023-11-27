@@ -9,6 +9,7 @@ import RegistrarOrdenha from '../pages/RegistrarOrdenha'
 import Cabecalho from './Cabecalho';
 import logo from '../assets/imagens/logomuu.png'
 import RegistrarAnimais from '../pages/RegistrarAnimais';
+import CadastrarAnimal from '../pages/RegistroDeAnimal';
 
 
 function Navegacao (){
@@ -23,11 +24,14 @@ function Navegacao (){
                         <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/animais">Animais</Nav.Link>
                         <br/>
+                        <Nav.Link className={styles.botaos} as={Link} to="/cadastrar">CadastrarAnimal</Nav.Link>
+                        <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/registrar">Registrar Ordenha</Nav.Link>
                         <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/vacinas">Vacinas</Nav.Link>
                         <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/historico">Historico</Nav.Link>
+                        
                     </div>
                 </Nav>
                 <Routes>
@@ -37,6 +41,7 @@ function Navegacao (){
                     <Route path="/vacinas" element={<Vacinas/>}/>
                     <Route path="/historico" element={<Historico/>}/>
                     <Route path="/registraranimais" element={<RegistrarAnimais/>}/>
+                    <Route path="/cadastrar" element={<CadastrarAnimal/>}/>
                 </Routes>
             </BrowserRouter>
         </div>
