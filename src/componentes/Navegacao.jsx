@@ -23,6 +23,8 @@ function Navegacao (){
                         <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/animais">Animais</Nav.Link>
                         <br/>
+                        <Nav.Link className={styles.botaos} as={Link} to="/registraranimais">Registrar Animais</Nav.Link>
+                        <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/registrar">Registrar Ordenha</Nav.Link>
                         <br/>
                         <Nav.Link className={styles.botaos} as={Link} to="/vacinas">Vacinas</Nav.Link>
@@ -34,6 +36,7 @@ function Navegacao (){
                     <Route path="/" exact={true} element={<MuuControl/>}/>
                     <Route path="/registrar" element={<RegistrarOrdenha/>}/>
                     <Route path="/animais" element={<Animais/>}/>
+                    <Route path="/registraranimais" element={<RegistrarAnimais/>}/>
                     <Route path="/vacinas" element={<Vacinas/>}/>
                     <Route path="/historico" element={<Historico/>}/>
                     <Route path="/registraranimais" element={<RegistrarAnimais/>}/>
