@@ -36,14 +36,6 @@ function ProjectForm ({handleSubmit, vacasData}) {
                 />
 
                 <Input
-                type="date"
-                text="Nascimento:"
-                name="data"
-                handleOnChange={handleChange}
-                value={vaca.data ? vaca.data : ''}
-                />
-
-                <Input
                 type="text"
                 text="Raça:"
                 name="raca"

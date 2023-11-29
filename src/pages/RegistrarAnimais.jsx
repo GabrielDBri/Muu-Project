@@ -1,10 +1,10 @@
-import {useHistory} from 'react-router-dom'
+//import {useHistory} from 'react-router-dom'
 import ProjectForm from '../componentes/ProjectForm'
 import styles from '../styles/RegistrarAnimais.module.css'
 
 function RegistrarAnimais(){
 
-    const history = useHistory()
+    //const history = useHistory()
 
     function createPost(vaca){
         //iniciando cost and services
@@ -19,7 +19,7 @@ function RegistrarAnimais(){
         .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
-            history.push('/registraranimais', {message: 'Criada com sucesso'})
+            //history.push('/registraranimais', {message: 'Criada com sucesso'})
         })
         .catch((err) => console.error(err))
     }
