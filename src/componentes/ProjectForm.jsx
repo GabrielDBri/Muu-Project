@@ -1,10 +1,9 @@
 import styles from './ProjectForm.module.css'
-import Select from './form/Select'
 import SubmitButton from './form/SubmitButton'
 import Input from './form/input'
 import { useState, useEffect } from 'react'
 
-function ProjectForm () {
+function ProjectForm ({handleSubmit, vacasData}) {
     const [vaca, setVacas] = useState(vacasData || {})
 
     useEffect(() => {
