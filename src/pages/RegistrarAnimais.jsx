@@ -8,22 +8,20 @@ function RegistrarAnimais(){
 
     function createPost(vaca){
         //iniciando cost and services
-        vaca.cost = 0
-        vaca.services = []
-        
+        console.log(vaca);
         fetch('http://localhost:8080/api/vacas',{
             method: 'POST',
             headers: {
-                'content-type': 'application/json',
+                'Content-type': 'application/json',
             },
             body: JSON.stringify(vaca),
         })
         .then((resp) => resp.json())
         .then((data) => {
             console.log(data)
-            history.push('/api/vacas', {message: 'Criada com sucesso'})
+            history.push('/registraranimais', {message: 'Criada com sucesso'})
         })
-        .catch((err) => console.log(err))
+        .catch((err) => console.error(err))
     }
 
     
@@ -40,4 +38,4 @@ function RegistrarAnimais(){
     
 }
 
-export default RegistrarAnimais;
+export default RegistrarAnimais

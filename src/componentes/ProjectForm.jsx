@@ -29,10 +29,10 @@ function ProjectForm ({handleSubmit, vacasData}) {
                 <Input
                 type="text"
                 text="Nome do animal:"
-                name="name"
+                name="nome"
                 placeholder="Insira O Nome Do Animal"
                 handleOnChange={handleChange}
-                value={vaca.name ? vaca.name : ''}
+                value={vaca.nome ? vaca.nome : ''}
                 />
 
                 <Input
