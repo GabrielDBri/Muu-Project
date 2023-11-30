@@ -7,7 +7,8 @@ class Vacas extends React.Component {
 
         this.state = {
             nome: '',
-            identificacao: '',
+            raca: '',
+            sexo: '',
             vacas: [],
         };
     }
@@ -17,9 +18,11 @@ class Vacas extends React.Component {
     }
 
     componentWillUnmount() {
+        // Se necessário, adicione lógica de limpeza quando o componente for desmontado
     }
 
     handleChange = (e) => {
+        // Atualize o estado dos inputs conforme o usuário digita
         const { name, value } = e.target;
         this.setState((prevState) => ({
             ...prevState,
@@ -29,10 +32,11 @@ class Vacas extends React.Component {
 
     handleSubmit = (e) => {
         e.preventDefault();
+        // Adicione lógica para processar o envio do formulário, se necessário
     };
 
     buscarVaca = () => {
-        fetch("http://localhost:3000/vacas")
+        fetch("http://localhost:8080/api/vacas")
             .then((resposta) => resposta.json())
             .then((dados) => {
                 this.setState({ vacas: dados });
@@ -40,37 +44,23 @@ class Vacas extends React.Component {
     };
 
     deletarVaca = (id) => {
-        fetch(`http://localhost:3000/vacas/${id}`, { method: 'DELETE' })
+        fetch("http://localhost:8080/api/vacas/delete/"+id, { method: 'DELETE' })
             .then((resposta) => {
                 if (resposta.ok) {
                     this.buscarVaca();
                 }
             });
     };
-
-    cadastroVaca = (vaca) => {
-        fetch('http://localhost:3000/vacas', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(vaca),
-        })
-        .then((resposta) => {
-            if (resposta.ok) {
-                this.buscarVaca();
-            } else {
-                alert('Não foi possível adicionar o animal');
-            }
-        });
-    }
     
 
     renderTabela() {
         return (
-            <Table>
+            <Table striped bordered hover>
                 <thead>
                     <tr>
-                        <th>Nome</th>
-                        <th>Codigo</th>
+                        <th>Nome:</th>
+                        <th>Raça:</th>
+                        <th>sexo:</th>
                         <th>Opções</th>
                     </tr>
                 </thead>
@@ -78,7 +68,8 @@ class Vacas extends React.Component {
                     {this.state.vacas.map((vaca) => (
                         <tr key={vaca.id}>
                             <td>{vaca.nome}</td>
-                            <td>{vaca.identificacao}</td>
+                            <td>{vaca.raca}</td>
+                            <td>{vaca.sexo}</td>
                             <td>
                                 <Button variant="danger" onClick={() => this.deletarVaca(vaca.id)}>
                                     Excluir
@@ -99,10 +90,18 @@ class Vacas extends React.Component {
         )
     }
 
-    atualizaIdentificacao = (e) => {
+    atualizaRaca = (e) => {
         this.setState(
             {
-                identificacao: e.target.value
+                raca: e.target.value
+            }
+        )
+    }
+
+    atualizaSexo = (e) => {
+        this.setState(
+            {
+                sexo: e.target.value
             }
         )
     }
@@ -110,8 +109,10 @@ class Vacas extends React.Component {
     submit(){
         const vaca = {
             nome: this.state.nome,
-            identificacao: this.state.identificacao
+            raca: this.state.raca,
+            sexo: this.state.sexo
         }
+
         this.cadastroVaca(vaca);
 
     }
@@ -119,36 +120,6 @@ class Vacas extends React.Component {
     render() {
         return (
             <div>
-                <Form onSubmit={this.handleSubmit}>
-                    <Form.Group className="mb-3" controlId="formBasicPassword">
-                        <Form.Label>Nome</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="digite o nome do animal"
-                            name="nome"
-                            value={this.state.nome}
-                            onChange={this.atualizaNome}
-                        />
-                    </Form.Group>
-                    <Form.Group className="mb-3" controlId="formBasicEmail">
-                        <Form.Label>Identificação</Form.Label>
-                        <Form.Control
-                            type="text"
-                            placeholder="digite a identificação do animal"
-                            name="identificacao"
-                            value={this.state.identificacao}
-                            onChange={this.atualizaIdentificacao}
-                        />
-                        <Form.Text className="text-muted">
-                            Digite o código da vaca
-                        </Form.Text>
-                    </Form.Group>
-                    <Button variant="primary" type="submit" onClick={this.submit.bind(this)}>
-                        Salvar
-                    </Button>
-
-                       
-                </Form>
                 {this.renderTabela()}
             </div>
         );
